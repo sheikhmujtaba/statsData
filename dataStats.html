@@ -95,8 +95,15 @@ report("#A6",answer)
 <div id="A7">
 <h3>Expand your function from the last one, so that the object it returns not only has a picture attribute, but also new attribute called quizMean, which is the mean of that penguins quiz scores</h3>
 <script>
-//be sure to test your function out.
-var answer="please complete";
+    var getboth= function(penguin)
+    {
+        var pic={};
+        pic.ag= penguin.picture;
+        pic.quizmean= getmean(penguin) ;
+        return pic
+    }
+
+var answer=getboth(classroom[0]);
 report("#A7",answer)    
 </script>
     </div>
@@ -104,8 +111,9 @@ report("#A7",answer)
 <div id="A8">
 <h3>With one line of code, return a list of objects that contain the picture and meanQuiz grade of all penguins</h3>
 <script>
-var answer="please complete";
-report("#A8",answer)    
+    classroom.map(getboth);
+    var brt= classroom.map(getboth);
+report("#A8",brt)    
 </script>
     </div>
 
@@ -119,7 +127,17 @@ report("#A8",answer)
         <li>finalGrade</li>
     </ul>
 <script>
-var answer="please complete";
+    var getlist= function(penguin)
+    {
+        var list={};
+        list.pict=penguin.picture;
+        list.meanquiz= getmean(penguin);
+        list.meantest= d3.mean(penguin.test, getGrade);
+        list.meanHW= d3.mean(penguin.homework, getGrade);
+        list.final= penguin.final[0].grade;
+        return list
+    }
+var answer=getlist(classroom[0]);
 report("#A9",answer)    
 </script>
     </div>
@@ -127,8 +145,9 @@ report("#A9",answer)
 <div id="A10">
 <h3>With one line of code, return a list of objects where each objects contains all of the summary info about each penguin.</h3>
 <script>
-var answer="please complete";
-report("#A10",answer)    
+    classroom.map(getlist)
+var buy= classroom.map(getlist);
+report("#A10",buy)    
 </script>
     </div>
     
@@ -144,9 +163,19 @@ report("#A10",answer)
 
 <div id="B1">
 <h3>Write a function that takes the classroom data and returns an array of objects.  Each object will have two attributes: a picture and the final grade in the class.</h3>
+
     
 <script>
-
+    var classdata= function(drb)
+    {
+        
+        var finalgrade= {};
+        finalgrade.final= drb.final*.35+drb.meanHW*.15+drb.meanquiz*.2+drb.meantest*.30;
+        finalgrade.pictur=drb.pict;
+        return finalgrade;
+    }
+    
+var answer= buy.map(classdata)
     report("#B1",answer);
 </script>
     </div>
@@ -164,6 +193,7 @@ report("#A10",answer)
 <h3>Write a function to find the average grade of all students on the first quiz.</h3>
     <p>Here is what you should get.=6.217391304347826</p>
 <script>
+    var fry= function
 var answer="Please Complete";
 report("#C1",answer)    
 </script>
