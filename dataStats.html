@@ -193,9 +193,15 @@ var answer= buy.map(classdata)
 <h3>Write a function to find the average grade of all students on the first quiz.</h3>
     <p>Here is what you should get.=6.217391304347826</p>
 <script>
-    var fry= function
-var answer="Please Complete";
-report("#C1",answer)    
+    var fry= function(penguin)
+    {
+      
+        return penguin.quizes[0].grade
+    }
+  var gg=classroom.map(fry);
+   
+
+report("#C1", d3.mean(gg))    
 </script>
     </div>
     
@@ -214,7 +220,7 @@ report("#C1",answer)
 <h3>Write a function that takes a number, day, and returns the average grade of all students on that day's quiz.</h3>
 <p>Hint you may define helper functions inside of a function.</p>
 <script>
-    
+    var quizero= 
 var answer="Complete for Extra";
     
 report("#D1",answer)    
